@@ -94,6 +94,27 @@ main {
     animation: borderGradient 6s ease infinite;
 }
 
+@keyframes borderGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+.divider-2 {
+    margin: 1rem auto; 
+    height: 2px;
+    width: 100%; 
+    background: linear-gradient(270deg, #a259ff, #6e56f5, #c084fc, #a259ff);
+    background-size: 300% 300%;
+    animation: borderGradient 6s ease infinite;
+}
+
 #header {
     border-bottom: 1px solid #fffffe;
     margin-bottom: .5rem;
@@ -398,7 +419,7 @@ content: "";
     color: var(--title-color);
     font-size: 1.2rem;
     margin-right: 0.5rem;
-  }
+}
 
 .school-item {
     margin-bottom: 1rem; /* espaço entre os blocos */
@@ -498,4 +519,70 @@ content: "";
   
 .language-item li {
     margin: .5rem 0; /* espaço entre cada linha */
+}
+
+/* PORTFOLIO */
+#portfolio .container {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#portfolio h2 {
+    font-size: 1.3rem;
+}
+
+#portfolio ul {
+    text-align: left;
+    align-items: start;
+}
+
+#portfolio h3 {
+    font-size: 1.125rem;
+}
+
+#portfolio a {
+    font-family: var(--paragraph-font);
+    color: var(--paragraph-color);
+}
+
+.portfolio-page {
+    margin-bottom: .1rem; /* espaço entre os blocos */
+}
+  
+.portfolio-page li {
+    margin: .5rem 0; /* espaço entre cada linha */
+}
+
+.portfolio-page li:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.portfolio-page li:first-child::before {
+    content: "•";
+    color: var(--title-color);
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.portfolio-item {
+    margin-bottom: .1rem; /* espaço entre os blocos */
+}
+  
+.portfolio-item li {
+    margin: .5rem 0; /* espaço entre cada linha */
+}
+
+.portfolio-item li:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.portfolio-item li:first-child::before {
+    content: "•";
+    color: var(--title-color);
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
 }
