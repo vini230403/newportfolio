@@ -1,0 +1,501 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+:root {
+    --paragraph-color: #94a1b2;
+    --title-color: #fffffe;
+
+    --body-color: #16161a;
+    --base-color: #fffffe;
+
+    --title-font-size: 1.875rem;
+    --subtitle-font-size: 1rem;
+    --title-font : "Poppins, sans-serif";
+    --paragraph-font: "Inter", sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+/* BASE */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font: 400 var(--subtitle-font-size) var(--paragraph-font);
+    color: var(--paragraph-color);
+    background: var(--body-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+.title {
+    font: 700 var(--title-font-size) var(--title-font);
+    color: var(--title-color);
+    -webkit-font-smoothing: auto;
+}
+
+/* LAYOUT */
+main {
+    margin-top: 3rem;
+}
+
+.container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 2rem
+}
+
+.section {
+    padding: 1.5rem 0;
+}
+
+.section .title {
+    margin-bottom: 1rem;
+}
+
+@keyframes borderGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+.divider-1 {
+    height: 2px;
+    width: 100%;
+    margin: 3rem 0;
+  
+    background: linear-gradient(270deg, #a259ff, #6e56f5, #c084fc, #a259ff);
+    background-size: 300% 300%;
+    animation: borderGradient 6s ease infinite;
+}
+
+#header {
+    border-bottom: 1px solid #fffffe;
+    margin-bottom: .5rem;
+    display: flex;
+
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: var(--body-color);
+}
+
+/* NAME */
+nav a {
+    font: 700 1.31rem var(--title-font)
+}
+
+a {
+    color: var(--title-color);
+}
+
+/* NAVBAR */
+nav {
+    height: 4.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+nav ul li {
+    text-align: center;
+}
+
+nav ul li a {
+    transition: color 0.2s;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--base-color);
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--base-color);
+
+    position: absolute;
+    left: 0;
+    bottom: -1rem;
+
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+nav .menu {
+    opacity: 0;
+    visibility: hidden;
+    top: -20rem;
+    transition: 0.3s;
+}
+
+nav .menu ul {
+    display: none;
+}
+
+nav.show .menu {
+    display: grid;
+    place-content: center;
+    opacity: 1;
+    visibility: visible;
+
+    background: var(--body-color);
+
+    height: 100vh;
+    width: 100vw;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav.show .menu ul {
+    display: grid;
+}
+
+nav.show ul.grid {
+    gap: 4rem;
+}
+
+/* TOGGLE MENU */
+.toggle {
+    color: var(--base-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+nav .icon-close {
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    top: -1.5rem;
+    right: 1.5rem;
+
+    transition: 0.3s;
+}
+
+nav.show div.icon-close {
+    visibility: visible;
+    opacity: 1;
+    top: 1.5rem;
+}
+
+nav.show div.icon-menu {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* ABOUT */
+#about {
+    overflow: hidden;
+    padding-top: 5rem;
+}
+
+#about .container {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#about .text {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    text-align: center;
+}
+
+#about h1 {
+    margin-bottom: 1rem;
+    font-size: var(--title-font-size);
+}
+
+#about h2 {
+    font-size: 1.2rem;
+}
+
+@keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+#about h2 strong {
+    background: linear-gradient(270deg, #a259ff, #6e56f5, #c084fc, #a259ff);
+    background-size: 600% 600%;
+    animation: gradientMove 5s ease infinite;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+#about .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes borderGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+#about .image {
+    width: 210px;
+    height: 210px;
+    padding: 5px;
+    margin: .1rem auto;
+
+    background: linear-gradient(270deg, #a259ff, #6e56f5, #c084fc, #a259ff);
+    background-size: 300% 300%;
+    animation: borderGradient 6s ease infinite;
+  
+    border-radius: 50%; /* círculo */
+    display: block;
+
+}
+
+#about .profile-photo {
+    border-radius: 50%;
+    width: 12.5rem;
+    height: 12.5rem;
+    object-fit: cover;
+    display: inline-block;
+    background: var(--body-color);
+}
+
+
+/* SKILLS */
+#skills .container {
+    text-align: center;
+    align-items: center;
+}
+
+/* Exemplo geral */
+#skills .icons ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+
+.icon-javascript::before {
+content: ""; 
+}
+
+.icon-react::before {
+content: "";
+}
+
+.icon-typescript::before {
+content: "";
+}
+
+.icon-html5::before {
+content: "";
+}
+
+.icon-css3::before {
+content: "";
+}
+
+.icon-github::before {
+content: "";
+}
+
+.icon-git::before {
+content: "";
+}
+
+.icon-figma::before {
+content: "";
+}
+  
+
+#skills .icons ul li::before {
+    font-size: 1.5rem;
+}
+
+#skills .icons ul li p {
+    font-family: var(--paragraph-font);
+}
+
+/* EDUCATION */
+#education {
+    text-align: left;
+}
+
+#education header {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#education .container header {
+    margin-bottom: 3rem;
+}
+
+#education ul {
+    padding: .5rem;
+}
+
+.school-item li:first-child::before,
+.course-item li:first-child::before,
+.language-item li:first-child::before {
+    content: "•";
+    color: var(--title-color);
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
+
+.school-item {
+    margin-bottom: 1rem; /* espaço entre os blocos */
+}
+  
+.school-item li {
+    margin: .5rem 0; /* espaço entre cada linha */
+}
+
+#education .school h2,
+#education .course h2,
+#education .language h2 {
+    margin-bottom: 1.5rem;
+}
+
+#education .school h2,
+#education .course h2,
+#education .language h2 {
+    font-size: 1.3rem;
+}
+
+#education .school .title h3,
+#education .course .title h3,
+#education .language .title h3 {
+    font-size: 1.125rem;
+}
+
+.course-item {
+    margin-bottom: 1rem; /* espaço entre os blocos */
+}
+  
+.course-item li {
+    margin: .5rem 0; /* espaço entre cada linha */
+}
+
+#education .course h2 {
+    margin-bottom: 1.5rem;
+}
+
+#education .course a {
+    color: #94a1b2;
+    font-family: var(--paragraph-font);
+    font-size: .9rem;
+}
+
+#education ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+}
+
+.icon-book::before {
+    content: "📘";
+    font-size: 1rem;
+  }
+  
+  .icon-calendar::before {
+    content: "📅";
+    font-size: 1rem;
+  }
+  
+  .icon-clock::before {
+    content: "⏱️";
+    font-size: 1rem;
+  }
+  
+  .icon-document-certificate::before {
+    content: "📄";
+    font-size: 1rem;
+  }
+
+#education ul li p {
+    font-family: var(--paragraph-font);
+    font-size: .9rem;
+}
+
+#education .language a {
+    color: #94a1b2;
+    font-family: var(--paragraph-font);
+    font-size: .9rem;
+}
+
+.icon-check-square::before {
+    content: '';
+    font-size: 1rem;
+}
+
+.icon-globe::before {
+    content: '';
+    font-size: 1rem;
+}
+
+.language-item {
+    margin-bottom: .1rem; /* espaço entre os blocos */
+}
+  
+.language-item li {
+    margin: .5rem 0; /* espaço entre cada linha */
+}
