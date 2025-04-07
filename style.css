@@ -109,12 +109,63 @@ main {
 .divider-2 {
     margin: 1rem auto; 
     height: 2px;
-    width: 100%; 
+    width: 90%; 
     background: linear-gradient(270deg, #a259ff, #6e56f5, #c084fc, #a259ff);
     background-size: 300% 300%;
     animation: borderGradient 6s ease infinite;
 }
 
+.image-slider {
+    width: 90%;
+    max-width: 600px;
+    margin: 1rem auto;
+    position: relative;
+    margin-top: -1rem;
+
+    border-radius: 8px;
+    border: 5px solid #7f5af0 ;
+}
+
+.image-slider .swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.image-slider .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.image-slider .swiper-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    display: none !important;
+}
+
+div.swiper-pagination {
+    padding-top: 0rem;
+    position: relative;
+}
+
+#portfolio .swiper-pagination-bullet {
+    background-color: #a259ff;
+    opacity: 1;
+    margin: 0 6px;
+}
+
+#portfolio .swiper-pagination-bullet-active {
+    background-color: #6e56f5;
+}
+  
+ 
 #header {
     border-bottom: 1px solid #fffffe;
     margin-bottom: .5rem;
@@ -418,7 +469,7 @@ content: "";
     content: "•";
     color: var(--title-color);
     font-size: 1.2rem;
-    margin-right: 0.5rem;
+    margin-right: 0rem;
 }
 
 .school-item {
@@ -535,7 +586,6 @@ content: "";
 
 #portfolio ul {
     text-align: left;
-    align-items: start;
 }
 
 #portfolio h3 {
@@ -548,11 +598,13 @@ content: "";
 }
 
 .portfolio-page {
-    margin-bottom: .1rem; /* espaço entre os blocos */
+    margin-bottom: 0rem; /* espaço entre os blocos */
+    padding: 2.5rem;
 }
   
 .portfolio-page li {
-    margin: .5rem 0; /* espaço entre cada linha */
+    margin: .5rem 0;
+     /* espaço entre cada linha */
 }
 
 .portfolio-page li:first-child {
@@ -568,7 +620,8 @@ content: "";
 }
 
 .portfolio-item {
-    margin-bottom: .1rem; /* espaço entre os blocos */
+    margin-bottom: 0rem; /* espaço entre os blocos */
+    padding: 2.5rem;
 }
   
 .portfolio-item li {
@@ -586,3 +639,10 @@ content: "";
     font-size: 1.2rem;
     margin-right: 0.5rem;
 }
+
+#portfolio .portfolio-item img {
+    margin: 3rem auto 0;      /* Centraliza a imagem */
+}
+
+
+

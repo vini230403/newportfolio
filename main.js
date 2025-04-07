@@ -16,3 +16,17 @@ for(const link of links) {
         nav.classList.remove('show')
     })
 }
+
+/* Carrosel */
+document.querySelectorAll('.image-slider').forEach((slider) => {
+    const pagination = slider.nextElementSibling;
+  
+    new Swiper(slider, {
+      slidesPerView: 1,
+      loop: true,
+      pagination: {
+        el: pagination,
+        clickable: true
+      }
+    });
+  });
