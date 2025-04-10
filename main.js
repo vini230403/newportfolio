@@ -27,6 +27,31 @@ document.querySelectorAll('.image-slider').forEach((slider) => {
       pagination: {
         el: pagination,
         clickable: true
-      }
+      },
+      autoplay: {
+        delay: 3000, 
+        disableOnInteraction: false, 
+      },
     });
   });
+
+
+/* scrollRevel */
+const isMobile = window.innerWidth <= 768;
+
+ScrollReveal().reveal(
+  `#about .title, #about .image, #about .text,
+  .divider-1, #skills .title, #skills .icons, 
+  #education .title, #education .school-item, #education .course-item, 
+  #education .language-item, #portfolio .title, #portfolio .portfolio-page, 
+  #portfolio .swiper, #portfolio .swiper-pagination, #portfolio .divider-2, 
+  #experience .title, #experience .jobs`,
+  {
+      origin: 'top',
+      distance: '20px',
+      duration: 500,
+      reset: false,
+      viewFactor: isMobile ? 0.1 : 0.2,
+      interval: 100
+  }
+)
