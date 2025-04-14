@@ -494,16 +494,11 @@ content: "";
     margin: .5rem 0; /* espaço entre cada linha */
 }
 
-#education .school h2,
-#education .course h2,
-#education .language h2 {
+#education h2,
+#education h2,
+#education h2 {
     margin-bottom: 1.5rem;
-}
-
-#education .school h2,
-#education .course h2,
-#education .language h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 #education .school .title h3,
@@ -528,6 +523,24 @@ content: "";
     color: #94a1b2;
     font-family: var(--paragraph-font);
     font-size: .9rem;
+}
+
+.school {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mínimo 300px por item */
+    gap: 1.5rem; /* Espaçamento entre os itens */
+}
+
+.course {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mínimo 300px por item */
+    gap: 1.5rem; /* Espaçamento entre os itens */
+}
+
+.language {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
 }
 
 #education ul li {
@@ -745,3 +758,170 @@ footer a:hover {
     transform: translateY(0);
 }
 
+
+/* RESPONSIVE */
+@media (min-width: 767px) {
+    nav.container {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #about .container {
+        display: grid;
+        grid-template-areas:
+          "presentation image"
+          "text        text";
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        align-items: center
+    }
+    
+      .presentation {
+        grid-area: presentation;
+        font-size: 1.8rem;
+        justify-content: center;
+    }
+    
+      #about .image {
+        grid-area: image;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    
+      #about .text {
+        grid-area: text;
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: center;
+        max-width: 80%;
+        margin: 0 auto;
+        padding-top: .5rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    
+    #education h2 {
+        margin-left: 1rem;
+    }
+
+    .school, 
+    .course,
+    .language {
+        margin-left: 1.5rem;
+    }
+    
+    #experience .jobs  {
+        margin-left: 1rem;
+    }
+
+    footer div {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+      
+}
+
+
+@media (min-width: 1024px) {
+    nav.container {
+        max-width: 1120px;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+
+    nav .menu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav div.icon-menu {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    nav .menu ul {
+        display: flex;
+        gap: 2rem;
+        margin-left: 16rem;
+    }
+
+    nav .menu ul li a {
+        font-size: 1.2rem;
+        
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: flex !important;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        color: #7f5af0 !important; 
+    }
+
+    .swiper-controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin-top: 10px;
+    }
+
+    .swiper-pagination {
+        position: static !important;
+    }
+
+    #about .container {
+       max-width: 1000px;
+       margin-left: auto;
+       margin-right: auto;
+    }
+
+    #about .text {
+        padding-left: 10.5rem;
+        padding-right: 10.5rem;
+    }
+
+    #education .school,
+    #education .language  {
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+    }
+
+    #experience .jobs {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    #experience .jobs h3{
+        text-align: center;
+    }
+
+    #experience .jobs .text {
+        max-width: 47ch; /* Limita a largura para cerca de 50 caracteres por linha */
+        line-height: 1.6;
+        margin: 0 auto;
+    }
+
+    footer div {
+        margin-left: 8rem;
+        margin-right: 8rem;
+    }
+}
+
+@media (min-width: 1600px) {
+    nav.container {
+        max-width: 1400px;
+    }
+
+    nav .menu ul {
+        margin-left: 30rem;
+    }
+}

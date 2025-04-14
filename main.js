@@ -24,6 +24,10 @@ document.querySelectorAll('.image-slider').forEach((slider) => {
     new Swiper(slider, {
       slidesPerView: 1,
       loop: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
       pagination: {
         el: pagination,
         clickable: true
@@ -44,7 +48,7 @@ ScrollReveal().reveal(
   .divider-1, #skills .title, #skills .icons, 
   #education .title, #education .school-item, #education .course-item, 
   #education .language-item, #portfolio .title, #portfolio .portfolio-page, 
-  #portfolio .swiper, #portfolio .swiper-pagination, #portfolio .divider-2, 
+   #portfolio .portfolio-item, #portfolio .swiper, #portfolio .swiper-pagination, #portfolio .divider-2, 
   #experience .title, #experience .jobs`,
   {
       origin: 'top',
